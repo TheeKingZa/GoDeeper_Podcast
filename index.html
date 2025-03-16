@@ -33,38 +33,15 @@
     <main>
         <section id="hero">
             <div class="hero-content">
-                <h1>Welcome to <i>Go Deeper Podcast</i></h1>
+                <h1>Welcome to <br><i>Go Deeper Podcast</i></h1>
                 <p>Exploring meaningful conversations that matter</p>
             </div>
         </section>
 
         <!-- Ad Video in ./graphics/vidz/ad1.mp4 -->
-        <section id="ad-video" style="text-align: center; margin: 20px 0;">
-            <video id="adVideo" src="./graphics/vidz/GDP_AD1.mp4" autoplay loop playsinline width="95%" style="border-radius: 10px;"></video>
-            <div class="video-controls" style="margin-top: 10px; display: flex; align-items: center; justify-content: center;">
-                <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="1" style="margin-right: 10px;">
-                <button id="muteButton" style="padding: 10px 20px; background-color: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer;">Mute</button>
-            </div>
-        </section>
-        <script>
-            const adVideo = document.getElementById('adVideo');
-            const muteButton = document.getElementById('muteButton');
-            const volumeUpButton = document.getElementById('volumeUpButton');
-            const volumeDownButton = document.getElementById('volumeDownButton');
-
-            muteButton.addEventListener('click', () => {
-            adVideo.muted = !adVideo.muted;
-            muteButton.textContent = adVideo.muted ? 'Unmute' : 'Mute';
-            });
-
-            volumeUpButton.addEventListener('click', () => {
-            if (adVideo.volume < 1) adVideo.volume += 0.1;
-            });
-
-            volumeDownButton.addEventListener('click', () => {
-            if (adVideo.volume > 0) adVideo.volume -= 0.1;
-            });
-        </script>
+        <section id="ad">
+            <video src="./graphics/vidz/GDP_AD1.mp4" width="100%" autoplay loop muted></video>
+        </section>  
 
         <section id="episodes">
             <h2>Catch Us Here!</h2>
@@ -79,7 +56,7 @@
             <h2>Coming Up Next ! ! !</h2>
             <p>Ep3 - K.Surprem</p>
             <div class="coming-up-image">
-            <img src="./graphics/CommingNext_Imgs/GDP_Ep3_K.Surprem.jpg" width="100%" alt="Coming Up Next Episode 3">
+            <img src="graphics/CommingNext_Imgs/GDP_Ep3_K.Surprem.jpg" width="100%" alt="Coming Up Next Episode 3">
             </div>
         </section>
 

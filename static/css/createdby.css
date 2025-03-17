@@ -1,0 +1,19 @@
+.created-by{
+    font-family: var(--fnt-mono);
+    position: fixed;
+    bottom: 2px;
+    left: 2px;
+}
+
+.created-by button{
+    padding: 0.25rem;
+    font-weight: bold;
+    font-size: var(--fnt-sm);
+    background-color: var(--alt-clr);
+    color: var(--dark-color);
+}
+
+.created-by button:hover{
+    background-color: var(--dark-color);
+    color: var(--light-color);
+}

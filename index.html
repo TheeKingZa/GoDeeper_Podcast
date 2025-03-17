@@ -9,7 +9,8 @@
     <!-- Favicon -->
     <link rel="icon" href="./graphics/imgs/logo_b.png" type="image/x-icon">
     <!-- CSS Styles -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./static/css/root.css">
+    <link rel="stylesheet" href="./static/css/createdby.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -43,13 +44,21 @@
             <video src="graphics/vidz/GDP_AD1.mp4" width="100%" autoplay loop muted></video>
         </section>  
 
-        <section id="episodes">
+        <section>
+            <!-- Episodes -->
             <h2>Catch Us Here!</h2>
-            <div id="episodes-container" class="episodes-grid">
-                <!-- Episodes will be loaded here dynamically -->
+            <div class="episode-wrapper">
+                <div class="episode-iframe" id="episode-iframe"></div>
+                <div class="episode-content">
+                    <h2 id="episode-title">Episode Title</h2>
+                    <!-- <p id="episode-description">Episode description goes here.</p> -->
+                </div>
+                <div class="controls">
+                    <button id="prev-btn">⬅ Previous</button>
+                    <button id="next-btn">Next ➡</button>
+                </div>
             </div>
         </section>
-
 
         <!-- Coming Up Image -->
         <section id="coming-up">
@@ -69,14 +78,26 @@
     <footer>
         <div class="footer-content">
             <div class="social-links">
-                <a href="#"><i class="fab fa-whatsapp"></i></a>
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-tiktok"></i></a>
+                <a href="https://whatsapp.com/channel/0029Vb9xrZx4Y9luPec2Gm2X"><i class="fab fa-whatsapp"></i></a>
+                <!-- <a href="#"><i class="fab fa-facebook"></i></a> -->
+                <a href="https://youtube.com/@GoDeeperPodcast-2024"><i class="fab fa-youtube"></i></a>
             </div>
             <p>Go Deeper Podcast &copy; <span id="currentYear"></span> . All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- created by Pule Mathikha -->
+    <!-- fixed on the bottom left corner as a button  -->
+    <div class="created-by">
+        
+        <a href="https://theekingza.github.io/Portfolio/">
+            <button>Creator</button>
+        </a>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="./static/js/EpCards.js"></script>
+    <script src="./static/js/date.js"></script>
+
 </body>
 </html>

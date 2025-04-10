@@ -54,7 +54,7 @@ nav {
 .logo {
     width: 100px;
     height: 100px;
-    background-image: url('../../graphics/imgs/logo_b.png');
+    background-image: url('../../graphics/imgs/logo_GD_blk.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -141,15 +141,6 @@ footer {
     color: var(--alt-clr);
 }
 
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
-    
-    .hero-content h1 {
-        font-size: 2rem;
-    }
-}
 
 /* Iframe */
 .episode-wrapper {
@@ -194,3 +185,32 @@ button {
 button:hover {
     background: var(--alt-clr);
 }
+    /* Screen Size */
+    /* large */
+    @media (width > 500px) {
+        body {
+            background-color: lime;
+            font-size: 1rem;
+        }
+        
+        .nav-links {
+            display: block;
+        }
+        
+        .hero-content h1 {
+            font-size: 2rem;
+        }
+    }
+    /* Small */
+    @media (width < 500px) {
+        body {
+            font-size: 1rem;
+        }
+        .nav-links {
+            display: none;
+        }
+        
+        .hero-content h1 {
+            font-size: 1.5rem;
+        }
+    }

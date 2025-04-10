@@ -94,7 +94,7 @@ nav {
 
 
 section h2{
-    color: red;
+    color: var(--alt-clr);
     padding: 1rem;
     text-align: center;
 }
@@ -189,8 +189,7 @@ button:hover {
     /* large */
     @media (width > 500px) {
         body {
-            background-color: lime;
-            font-size: 1rem;
+            font-size: 2rem;
         }
         
         .nav-links {

@@ -27,12 +27,9 @@ body {
 }
 
 header {
-    background-color: var(--light-color);
-    padding: 1rem;
-    position: fixed;
+    background-color: var(--alt-clr);
+    padding: 10px;
     width: 100%;
-    top: 0;
-    z-index: 1000;
 }
 
 nav {
@@ -78,7 +75,7 @@ nav {
 }
 
 #hero {
-    height: 100vh;
+    padding: 10px;
     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://source.unsplash.com/random/1920x1080/?podcast') center/cover;
     display: flex;
     align-items: center;
@@ -196,8 +193,12 @@ button:hover {
             display: block;
         }
         
-        .hero-content h1 {
-            font-size: 2rem;
+        .hero-content {
+            padding: 20px;
+            margin-top: 30vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            font-size: 1.5rem;
         }
     }
     /* Small */
@@ -209,7 +210,13 @@ button:hover {
             display: none;
         }
         
-        .hero-content h1 {
-            font-size: 1.5rem;
+        .hero-content {
+            padding: 20px;
+            gap: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
         }
     }

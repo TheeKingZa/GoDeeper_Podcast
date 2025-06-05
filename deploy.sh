@@ -54,7 +54,18 @@ git checkout $pages_branch
 git checkout $master_branch -- .
 git add .
 git commit -m "Update gh-pages from master"
-git push origin $pages_branch
+
+# Prompt for force push
+read -p "Do you want to force push to gh-pages? (y/n): " force_push_answer
+if [[ "$force_push_answer" == "y" ]]; then
+  echo "Force pushing to gh-pages..."
+  git push origin $pages_branch --force
+  echo "Force push completed."
+else
+  echo "Pushing to gh-pages..."
+  git push origin $pages_branch
+  echo "Push completed."
+fi
 
 # Check if the branches are identical
 if git diff --quiet $master_branch $pages_branch; then

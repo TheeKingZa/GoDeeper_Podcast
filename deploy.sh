@@ -1,42 +1,53 @@
 #!/bin/bash
 
-# Colors
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-NC='\033[0m' # No color
+# Set the name of your GitHub Pages branch
+pages_branch="gh-pages"
 
-# Check if gh-pages branch exists
-if git show-ref --verify --quiet refs/heads/gh-pages; then
-    echo -e "${GREEN}✅ 'gh-pages' branch already exists.${NC}"
+# Check if git is installed
+if ! command -v git &> /dev/null; then
+  echo "Error: Git is not installed. Please install Git before proceeding."
+  exit 1
+fi
+
+# Check if the gh-pages branch exists. If not, create it.
+if ! git branch -l | grep -q "$pages_branch"; then
+  echo "Creating gh-pages branch..."
+  git checkout --orphan $pages_branch
+  git rm -rf .
+  git commit -m "Initial commit for gh-pages"
+  git push --set-upstream origin $pages_branch
+  echo "Successfully created gh-pages branch."
 else
-    echo -e "${RED}❌ 'gh-pages' branch does not exist. Creating...${NC}"
-    git checkout -b gh-pages
-    if [ $? -eq 0 ]; then
-        echo -e "${GREEN}✅ 'gh-pages' branch created successfully.${NC}"
-    else
-        echo -e "${RED}❌ Failed to create 'gh-pages' branch.${NC}"
-        exit 1
-    fi
+  echo "gh-pages branch already exists. Proceeding with deployment..."
 fi
 
-# Ask for a commit message
-echo -e "${GREEN}Enter a commit message:${NC}"
-read -r commit_message
+# Build your website (replace with your actual build command)
+echo "Building website..."
+# Add your build command here if needed
 
-# Default commit message if none is provided
-if [ -z "$commit_message" ]; then
-    commit_message="Deploying to gh-pages"
-fi
+# Check for changes
+if [[ -n $(git status -s) ]]; then
+  # Prompt for a commit message
+  read -p "Enter commit message: " commit_message
 
-# Add and commit changes
-git add .
-git commit -m "$commit_message"
+  # Add and commit changes
+  git add .
+  git commit -m "$commit_message"
 
-# Push to gh-pages
-git push origin gh-pages
+  # Push to gh-pages branch
+  git checkout $pages_branch
+  git push origin $pages_branch
 
-if [ $? -eq 0 ]; then
-    echo -e "${GREEN}✅ Successfully pushed to 'gh-pages'.${NC}"
+  # Check if the push was successful
+  if [ $? -ne 0 ]; then
+    echo "Error: Push to gh-pages branch failed."
+    exit 1
+  fi
+
+  echo "Successfully deployed to GitHub Pages!"
 else
-    echo -e "${RED}❌ Failed to push to 'gh-pages'.${NC}"
+  echo "No changes to deploy."
 fi
+
+# Return to master branch
+git checkout master

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Set the name of your GitHub Pages branch
+# Set the names of your branches
 pages_branch="gh-pages"
 master_branch="master"
 
@@ -49,10 +49,12 @@ else
   echo "No changes to push to master branch."
 fi
 
-# Copy files from gh-pages to master
+# Update gh-pages branch with the latest from master
 git checkout $pages_branch
-git checkout $master_branch
-git checkout $pages_branch -- .
+git checkout $master_branch -- .
+git add .
+git commit -m "Update gh-pages from master"
+git push origin $pages_branch
 
 # Check if the branches are identical
 if git diff --quiet $master_branch $pages_branch; then

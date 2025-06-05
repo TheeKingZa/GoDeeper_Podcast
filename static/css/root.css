@@ -70,7 +70,7 @@ nav {
     } 
 
     div.episode-card {
-        border: 5px solid lime;
+        border: 1px solid;
         display: grid;
         grid-template-columns: 1fr;
         gap: 2rem;

@@ -4,8 +4,11 @@
     <!-- MetaData -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Go Deeper Podcast - Dive into the depths of human experience with raw, honest conversations on personal growth, social justice & cultural commentary.">
+    <meta name="keywords" content="podcast, mental health, self-discovery, social justice, culture, interviews">
+    <meta name="author" content="Go Deeper Podcast">
     <!-- Title -->
-    <title>Go Deeper </title>
+    <title>Go Deeper Podcast</title>
     <!-- Favicon -->
     <link rel="icon" href="./graphics/imgs/logo_GD_blk.png" type="image/x-icon">
     <!-- CSS Styles -->
@@ -13,144 +16,245 @@
     <link rel="stylesheet" href="./static/css/createdby.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="./static/css/slideShowImgs.css">
+    <style>
+
+        /* Testing */
+
+     
+        /* Add your custom styles here or in a separate CSS file */
+        .cta-button {
+            display: inline-block;
+            background-color: #333; /* Example color */
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+
+        a.cta-button:hover {
+            background-color: var(--accent-color);
+            color: black;
+        }
+        .episode-card {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        .episode-card h3 {
+            color: var(--alt-clr2);
+            font-size: 2rem;
+            font-family: 'sans-serif';
+            margin-top: 0;
+        }
+
+        .ep-card-info {
+            display: flex;
+            flex-direction:column;
+            justify-content: center;
+            align-items: center;
+        }
+        .ep-card-info p {
+            text-align: center;
+        }
+
+        .ep-card-info a:hover {
+            background-color: red;
+
+        }
+
+        .latest-eps {
+            animation: fadin 2.5s infinite;
+        }
+
+        @keyframes fadin {
+            0% {
+                color: var(--secondary-color);
+            }
+
+            100% {
+                color: red;
+            }
+        }
+
+
+        .ep-card-img{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .ep-card-img img {
+            border-radius: 25px;
+            width: 100%;
+            max-height: 100%;
+
+        }
+        .watch-button {
+            display: inline-block;
+            background-color: #007bff; /* Example color */
+            color: white;
+            padding: 8px 15px;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav>
             <div class="nav-header">
-            <div class="logoNavHeader">
-                <h1>Go Deeper Podcast</h1>
-            </div>
-            <div class="logo">
-            </div>
+                <div class="logoNavHeader">
+                    <h1>Go Deeper Podcast</h1>
+                </div>
+                <div class="logo"></div>
             </div>
             <!-- Navigation Links -->
             <div class="nav-links">
-                <a href="#episodes">Episodes</a>
                 <a href="#about">About</a>
+                <a href="#episodes">Episodes</a>
+                <a href="#subscribe">Subscribe</a>
             </div>
         </nav>
     </header>
 
     <main>
-          
-
-
         <section id="hero">
             <div class="hero-content">
-                <div>
-                    Join us on a journey to the depths of human experience, where we'll dive into the unseen, unspoken, and uncharted territories of life. Each time, we’ll be having raw, real, and riveting conversations with inspiring guests from various walks of life.
-                </div>
-                <div>
-                    We'll venture into the unknown, confront our fears, and embrace the mysteries that make us human. From mental health and self-discovery to social impact and personal growth, we'll explore it all.
-                </div>
-                <div>
-                    
-                Tune in for unfiltered stories, provocative insights, and heart-centered connections. Let's dive in, break down barriers, and rise above the surface level
-                <div>
-                    
-        <section id="slideshow">
-            <h2>@STUDIO</h2>
-            <div class="slideshow-container">
-              <img id="slideshow-image" src="data/images/image1.jpg" alt="Slideshow Image" />
-            </div>
-          </section>
-                </div>
-                </div>
-            </div>
-        </section>
+               <div style="
+                display: flex; 
+                justify-content: center; 
+                align-items: center; 
+               
 
-          <!-- Coming Up Image -->
-          <section id="coming-up">
-            <h2>NEW ! ! !</h2>
-            <p>Ep3 - K.Surprem</p>
-            <div class="coming-up-image">
-            <img src="graphics/CommingNext_Imgs/GDP_Ep3_K.Surprem.jpg" width="100%" alt="Coming Up Next Episode 3">
+                ">
+        <img style="
+        border: 2px solid black;
+        background-color: var(--secondary-color);
+        border-radius: 50%;
+        " src="./graphics/imgs/logo_GD_wrapped.png" width="50%" alt="Go Deeper Logo">
+    </div>
+                <p>Join us on a journey to the depths of human experience. We dive into the unseen, unspoken, and uncharted territories of life, with raw, real, and riveting conversations with inspiring guests. Explore mental health, self-discovery, social impact, and personal growth.</p>
+                <a href="https://www.youtube.com/@GoDeeperPodcast-2024" class="cta-button">Watch On <i class="fab fa-youtube"></i></a>
             </div>
         </section>
 
 
-      
 
-        <section>
-            <!-- Episodes -->
-            <h2 id="episodes">Catch Us Here!</h2>
-            <div class="episode-wrapper">
-                <div class="episode-iframe" id="episode-iframe"></div>
-                <div class="episode-content">
-                    <h2 id="episode-title">Episode Title</h2>
-                    <!-- <p id="episode-description">Episode description goes here.</p> -->
+        <section id="episodes">
+            <h2>Catch-up On Old Episodes</h2>
+            <div class="episode-list">
+                <div class="episode-card">
+                    <div class="ep-card-info">
+                    <!-- EP1                -->
+                    <h3>Are You Ready To Go Deeper?</h3>
+                    <p>Unseen, Unspoken and Uncharted</p>
+                    <a href="https://www.youtube.com/embed/DMxZ-RkCTno?si=Py2tjFVAHGiGEl0j" class="watch-button"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <div class="ep-card-img">
+                        <img src="./graphics/images/3.jpg" alt="">
+                    </div>
                 </div>
-                <div class="controls">
-                    <button id="prev-btn">⬅ Previous</button>
-                    <button id="next-btn">Next ➡</button>
+                <!-- EP2 -->
+                <div class="episode-card">
+                    <div class="ep-card-info">
+                        <h3>The Gray Area Of Cheating</h3>
+                        <p>Couples face unique challenges in their relationships.</p>
+                        <a href="https://youtu.be/taJwRIuUv_E?si=-A2vxd5lcbAE_JkM" class="watch-button"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <div class="ep-card-img">
+                        <img src="./graphics/images/4.jpg" alt="">
+                    </div>
                 </div>
-            </div>
-
-            
-        </section>
-            <!-- Ad Video in ./graphics/vidz/ad1.mp4 -->
-            <section id="ad">
-                <video src="graphics/vidz/GDP_AD1.mp4" width="100%" autoplay loop muted></video>
-            </section> 
-
-      
-        <section id="about">
-            <h2>About Us</h2>
-            <p>Dive into the unseen, unspoken & uncharted depths of human experience with Go Deeper. <br> Raw, honest conversations on personal growth, social justice & cultural commentary. 
+                <!-- Build Up -->
+                <div class="episode-card">
+                 <div class="ep-card-info">
+                        <h3>The Build Up !!!</h3>
+                        <p>Building Up To The BIG Reveal</p>
+                        <a href="https://www.youtube.com/watch?v=FRuhBDn5GsE&t=34s" class="watch-button"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <div class="ep-card-img">
+                        <img src="./graphics/images/3.jpg" alt="">
+                    </div>
+                </div>
+                 <!-- EP3 -->
+                <div class="episode-card">
+                 <div class="ep-card-info">
+                        <h3>The Art Of Expression:</h3>
+                        <p>K.surprem</p>
+                        <a href="https://www.youtube.com/watch?v=vms4dF-Xtgo&t=328s" class="watch-button"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <div class="ep-card-img">
+                        <img src="./graphics/images/K.jpg" alt="">
+                    </div>
+                </div>
+                <h2 class="latest-eps">Latest Episodes</h2>
                 
-            <br><br>
-            <h2>
-                Join The Journey.
-            </h2>
-            </p>
-                <br><br>
-            <span>ARE YOU READY TO GO DEEPER?</span>
+                <!-- EP4 -->
+                <div class="episode-card">
+                    <div class="ep-card-info">
+                        <h3>Siyabonga</h3>
+                        <p>iSupport Nothando On Our Shared Journey </p>
+                        <a href="https://www.youtube.com/watch?v=Oq7trPsONWE&t=1930s" class="watch-button"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <div class="ep-card-img">
+                        <img src="./graphics/images/1.jpg" alt="">
+                    </div>
+                </div>
+                <!-- Add more episode cards here -->
+
+                
+            <!-- EO_episode-list -->
+            </div>
+            
+        <!-- EO_episodes -->
         </section>
 
-       
+        <section id="subscribe">
+            <h2>Please <b class="latest-eps">Subscribe</b></h2>
+            <p>So that You Never miss an episode! <br>
+                Remember To Hit That Bell:</p>
+            <div class="subscribe-links">
+                <a href="https://www.youtube.com/@GoDeeperPodcast-2024" class="subscribe-button"><i class="fab fa-youtube"> YouTube</i></a>
+                <!-- Add more subscription links here -->
+            </div>
+        </section>
+
+
+                <section id="about">
+            <h2>About Us</h2>
+            <p>Go Deeper Podcast is a space for raw, honest conversations about the human experience. We explore personal growth, social justice, and cultural commentary through in-depth interviews and discussions. Our mission is to provide a platform for diverse voices and perspectives, fostering connection and understanding.</p>
+            <p>Hosted by [Host Name(s)], we bring you thought-provoking content that challenges your assumptions and inspires you to live a more meaningful life.</p>
+            <a href="https://instagram.com/go_deeper_podcast_" class="cta-button">Explore <i class="fab fa-instagram"> Gallary</i> </a>
+        </section>
     </main>
 
-    <div style="display: flex; justify-content: center; align-items: center; background-color: var(--alt-clr);">
-        <img src="./graphics/imgs/logo_GD_wrapped.png" width="50%"  alt="">
-    </div>
+   
 
     <footer>
         <div class="footer-content">
             <div class="social-links">
-                <!-- instagram -->
-                <a href="https://instagram.com/go_deeper_podcast_"><i class="fab fa-instagram"></i></a>
-                <!-- tiktok -->
                 <a href="https://www.tiktok.com/@innocent_083"><i class="fab fa-tiktok"></i></a>
-                <!-- youtube -->
-                <a href="https://youtube.com/@GoDeeperPodcast-2024"><i class="fab fa-youtube"></i></a>
-                <!-- whatsapp -->
                 <a href="https://whatsapp.com/channel/0029Vb9xrZx4Y9luPec2Gm2X"><i class="fab fa-whatsapp"></i></a>
-                <!-- facebook -->
                 <a href="https://www.facebook.com/profile.php?id=100079624508359"><i class="fab fa-facebook"></i></a>
-                <!-- twitter -->
                 <a href="https://x.com/godeeperpodcast"><i class="fab fa-x"></i></a>
             </div>
-
-            
-            <p>Go Deeper Podcast &copy; <span id="currentYear"></span> . All rights reserved.</p>
+            <p>Go Deeper Podcast &copy; <span id="currentYear"></span>. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- created by Pule Mathikha -->
-    <!-- fixed on the bottom left corner as a button  -->
+    <!-- Created by Pule Mathikha -->
     <div class="created-by">
-        
         <a href="https://theekingza.github.io/Portfolio/">
             <button>Creator</button>
         </a>
     </div>
 
     <!-- JavaScript -->
-    <script src="./static/js/EpCards.js"></script>
     <script src="./static/js/date.js"></script>
-    <script src="./static/js/slideShowImgs.js"></script>
-
 
 </body>
 </html>

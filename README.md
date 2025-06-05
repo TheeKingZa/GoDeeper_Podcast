@@ -25,25 +25,14 @@ A static website for the Go Deeper Podcast, built with HTML, CSS, and JavaScript
 - JSON for data management
 
 📁 Project Structure
+```
 GoDeeper_Podcast/
 ├── index.html          # Main HTML file
 ├── style.css          # Stylesheet
 ├── script.js          # JavaScript functionality
 ├── README.md          # Project documentation
-└── data/
-    └── iframe.json    # Episode data
-
-    📝 Usage
-Adding New Episodes
-* Open data/iframe.json
-* Add a new episode object following this 
-```
-format:
-{
-    "title": "Episode Title",
-    "description": "Episode Description",
-    "iframe": "YouTube Embed Code"
-}
+└── graphics/
+    └── images    # Images data
 ```
 Customization
 * Update colors in style.css
@@ -52,19 +41,15 @@ Customization
 * Change the hero background image
 * Update the About section content
 
-🤝 Contributing
-* Fork the repository
-* Create your feature branch (git checkout -b feature/AmazingFeature)
-* Commit your changes (git commit -m 'Add some AmazingFeature')
-* Push to the branch (git push origin feature/AmazingFeature)
-* Open a Pull Request
+---
 
-👥 Authors
+👥 Author
 [Pule Mathikha](https://theekingza.github.io/Portfolio)
+
+---
 
 🙏 Acknowledgments
 Font Awesome for icons
-Unsplash for the hero background image
 YouTube for video embedding capabilities
 
 ## 🌐 Live Demo

@@ -2,11 +2,22 @@
 
 # Set the name of your GitHub Pages branch
 pages_branch="gh-pages"
+master_branch="master"
 
 # Check if git is installed
 if ! command -v git &> /dev/null; then
   echo "Error: Git is not installed. Please install Git before proceeding."
   exit 1
+fi
+
+# Check if the master branch exists. If not, create it.
+if ! git branch -l | grep -q "$master_branch"; then
+  echo "Creating master branch..."
+  git checkout -b $master_branch
+  git push -u origin $master_branch
+  echo "Successfully created master branch."
+else
+  echo "Master branch already exists. Proceeding..."
 fi
 
 # Check if the gh-pages branch exists. If not, create it.
@@ -25,29 +36,30 @@ fi
 echo "Building website..."
 # Add your build command here if needed
 
-# Check for changes
+# Check for changes in the master branch
+git checkout $master_branch
 if [[ -n $(git status -s) ]]; then
   # Prompt for a commit message
-  read -p "Enter commit message: " commit_message
-
-  # Add and commit changes
+  read -p "Enter commit message for master branch: " commit_message
   git add .
   git commit -m "$commit_message"
-
-  # Push to gh-pages branch
-  git checkout $pages_branch
-  git push origin $pages_branch
-
-  # Check if the push was successful
-  if [ $? -ne 0 ]; then
-    echo "Error: Push to gh-pages branch failed."
-    exit 1
-  fi
-
-  echo "Successfully deployed to GitHub Pages!"
+  git push origin $master_branch
+  echo "Changes pushed to master branch."
 else
-  echo "No changes to deploy."
+  echo "No changes to push to master branch."
+fi
+
+# Copy files from gh-pages to master
+git checkout $pages_branch
+git checkout $master_branch
+git checkout $pages_branch -- .
+
+# Check if the branches are identical
+if git diff --quiet $master_branch $pages_branch; then
+  echo "The master and gh-pages branches are identical."
+else
+  echo "The master and gh-pages branches are different."
 fi
 
 # Return to master branch
-git checkout master
+git checkout $master_branch

@@ -48,10 +48,6 @@ Customization
 
 ---
 
-After changes
-
-
----
 🙏 Acknowledgments
 Font Awesome for icons
 YouTube for video embedding capabilities

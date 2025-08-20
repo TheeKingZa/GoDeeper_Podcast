@@ -12,29 +12,33 @@ deploy_to_github() {
     current_branch=$(git rev-parse --abbrev-ref HEAD)
 
     if [ "$current_branch" != "master" ]; then
-        echo -e "${YELLOW}Switching to master bracnh...${NC}"
+        echo -e "${YELLOW}Switching to master branch...${NC}"
         git checkout master 2>/dev/null || git checkout -b master
     fi
 
     # Add all changes
     git add .
 
-    # prompt for a commit
+    # Prompt for a commit
     read -p "Enter commit message: " commit_message
 
-    # Commit Changes
-    git commit -m "$commit_message"
+    # Commit only if there are changes
+    if git diff --cached --quiet; then
+        echo -e "${YELLOW}No changes to commit.${NC}"
+    else
+        git commit -m "$commit_message"
+    fi
 
-    # Push to master GitHub
+    # Push to master branch
     git push origin master
     if [ $? -ne 0 ]; then
-        echo -e "${RED}Failed to push to Github.${NC}"
+        echo -e "${RED}Failed to push to master.${NC}"
         exit 1
     fi
 
-    echo -e "${GREEN}Changes pushed to GitHub successfully!${NC}"
+    echo -e "${GREEN}Changes pushed to master successfully!${NC}"
 
-    # Check if gh-pages branch exists
+    # Deploy to gh-pages
     if git show-ref --quiet refs/heads/gh-pages; then
         echo -e "${GREEN}gh-pages branch exists. Updating...${NC}"
         git checkout gh-pages
@@ -45,17 +49,22 @@ deploy_to_github() {
         git merge master --no-edit
     fi
 
-    # Push to gh-pages branch
+    # Rebase with remote gh-pages to avoid non-fast-forward errors
+    git pull origin gh-pages --rebase
+
+    # Push to gh-pages
     git push origin gh-pages
     if [ $? -ne 0 ]; then
         echo -e "${RED}Failed to push to gh-pages.${NC}"
         exit 1
     fi
+
     echo -e "${GREEN}Changes pushed to gh-pages successfully!${NC}"
-    # Switch back to master branch
+
+    # Switch back to master branch after deployment
     git checkout master
+    echo -e "${GREEN}Switched back to master branch.${NC}"
 }
 
-
-#  Run deployment function
+# Run deployment function
 deploy_to_github
